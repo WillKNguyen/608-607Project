@@ -6,20 +6,20 @@ import requests
 from bs4 import BeautifulSoup as soup
 
 
-header = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64)AppleWebKit/537.36 (KHTML, like Gecko)Chrome/83.0.4103.97 Safari/537.36',        
-          'referer':'https://www.zillow.com/homes/for_rent/Manhattan,-New-York,-NY_rb/?searchQueryState=%7B%22pagination' 
-}
+# header = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64)AppleWebKit/537.36 (KHTML, like Gecko)Chrome/83.0.4103.97 Safari/537.36',        
+#           'referer':'https://www.zillow.com/homes/for_rent/Manhattan,-New-York,-NY_rb/?searchQueryState=%7B%22pagination' 
+# }
  
 # Enter Zillow URL for the city of your preference
-url = 'https://www.zillow.com/homes/for_sale/Toronto,-ON_rb/'
-html = requests.get(url=url,headers=header)
+url = 'https://www.remax.ca/on/toronto-real-estate'
+html = requests.get(url=url)
 html.status_code
 bsobj = soup(html.content,'lxml') #bsobj - Beautiful Soup Object
-# print(type(bsobj))
+print(bsobj)
 
-# f=open("scrapedON.txt", "w", encoding="utf-8")
-# f.write(bsobj.prettify())
-# f.close()
+f=open("scrapedREMAX.txt", "w", encoding="utf-8")
+f.write(bsobj.prettify())
+f.close()
 # price list is a list variable that will contain
 
 # the price information.

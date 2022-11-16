@@ -1,0 +1,133 @@
+MLS,City,Province,Address,Price,NumberOfBeds,NumberOfBaths
+SK914096,Saskatoon,SK,"739 L AVENUE S, Saskatoon, SK",229900,3,2
+SK914132,Saskatoon,SK,"46 Peeling AVENUE, Saskatoon, SK",329900,4,2
+SK914089,Saskatoon,SK,"115 Ash STREET E, Saskatoon, SK",259900,3,1
+SK914075,Saskatoon,SK,"334 Crean CRESCENT, Saskatoon, SK",419900,4,3
+SK914086,Saskatoon,SK,"739 Hastings COVE, Saskatoon, SK",899900,4,3
+SK914121,Saskatoon,SK,"1227 D AVENUE N, Saskatoon, SK",249900,8,5
+SK914104,Saskatoon,SK,"2415 Rosewood DRIVE, Saskatoon, SK",598700,3,3
+SK914117,Saskatoon,SK,"1 927 Heritage VIEW, Saskatoon, SK",509900,2,3
+SK914082,Saskatoon,SK,"2435 Rosewood DRIVE, Saskatoon, SK",554300,3,3
+SK914106,Saskatoon,SK,"2427 Rosewood DRIVE, Saskatoon, SK",632500,4,3
+SK914056,Saskatoon,SK,"3409 Ortona STREET, Saskatoon, SK",1275000,6,4
+SK914108,Saskatoon,SK,"1 Bow COURT, Saskatoon, SK",399000,4,3
+SK913998,Saskatoon,SK,"302 Poth CRESCENT, Saskatoon, SK",319900,3,3
+SK914012,Saskatoon,SK,"652 University DRIVE, Saskatoon, SK",599900,5,3
+SK914042,Saskatoon,SK,"108 1435 Embassy DRIVE, Saskatoon, SK",119900,2,1
+SK914035,Saskatoon,SK,"506 537 4th AVENUE N, Saskatoon, SK",179900,2,1
+SK914010,Saskatoon,SK,"B4 255 Kingsmere BOULEVARD, Saskatoon, SK",129900,2,2
+SK914052,Saskatoon,SK,"210 Aniskotaw MANOR, Saskatoon, SK",499900,3,3
+SK914061,Saskatoon,SK,"3104 Ortona STREET, Saskatoon, SK",619900,3,3
+E4319228,Edmonton,AB,"14425 110A AV NW, Edmonton, AB",392500,4,3
+E4318803,Edmonton,AB,"9124 141 ST NW NW, Edmonton, AB",1190000,4,3
+E4318797,Edmonton,AB,"#7 15710 BEAUMARIS RD NW, Edmonton, AB",189900,3,2
+E4318817,Edmonton,AB,"6843 111 ST NW, Edmonton, AB",380000,4,2
+E4318811,Edmonton,AB,"#602 12303 JASPER AV NW, Edmonton, AB",325000,2,2
+E4318805,Edmonton,AB,"11710 122 ST NW, Edmonton, AB",389900,3,2
+E4318453,Edmonton,AB,"#1502 10303 105 ST NW, Edmonton, AB",215000,2,1
+E4318462,Edmonton,AB,"16 West Point WD NW, Edmonton, AB",1389900,4,6
+E4318292,Edmonton,AB,"9220 75 ST NW, Edmonton, AB",450000,5,4
+E4318289,Edmonton,AB,"#120 10407 122 ST NW, Edmonton, AB",234800,2,1
+E4318264,Edmonton,AB,"11134 101 ST NW, Edmonton, AB",309900,2,2
+E4318270,Edmonton,AB,"12824 130 ST NW, Edmonton, AB",286900,2,1
+E4318272,Edmonton,AB,"6512 111 AV NW, Edmonton, AB",835000,5,4
+E4318286,Edmonton,AB,"#809 10142 111 ST NW, Edmonton, AB",400000,2,2
+A2004671,Edmonton,AB,"12905 66 Street NW, Edmonton, AB",250000,2,1
+E4313860,Edmonton,AB,"9535 147 AV NW, Edmonton, AB",295000,4,5
+E4313357,Edmonton,AB,"#105 11716 100 AV NW, Edmonton, AB",320000,2,2
+A2009409,Calgary,AB,"253 22 Avenue NW, Calgary, AB",629999,2,2
+A2008802,Calgary,AB,"159 New Brighton Close SE, Calgary, AB",689900,5,4
+A2003495,Calgary,AB,"1029 Fonda Court SE, Calgary, AB",299900,4,2
+A2005616,Calgary,AB,"1716 42 Street NE, Calgary, AB",519900,4,3
+A2011129,Calgary,AB,"111 Deerpath Court SE, Calgary, AB",399000,3,2
+A2012027,Calgary,AB,"1 1720 kensington Road NW, Calgary, AB",575000,3,4
+A2011096,Calgary,AB,"180 Gordon Drive SW, Calgary, AB",499900,3,2
+A2011719,Calgary,AB,"2 930 Royal Avenue SW, Calgary, AB",199900,2,1
+A2011914,Calgary,AB,"1413 151 Country Village Road NE, Calgary, AB",340000,1,1
+A2012019,Calgary,AB,"27 Hunterhorn Crescent NE, Calgary, AB",349900,3,2
+A2007664,Calgary,AB,"325 Mckenzie Towne Gate SE, Calgary, AB",374900,3,3
+A2009419,Calgary,AB,"8 Taraglen Road NE, Calgary, AB",439900,3,2
+A1258735,Calgary,AB,"4308 13045 6 Street SW, Calgary, AB",174900,2,1
+A2010155,Calgary,AB,"106 Tuscany Meadows Heights NW, Calgary, AB",924888,4,4
+A2004459,Calgary,AB,"305 525 13 Avenue SW, Calgary, AB",159900,1,1
+A2008620,Calgary,AB,"306 1315 12 Avenue SW, Calgary, AB",294900,2,2
+A2003939,Calgary,AB,"40 Strathcona Road SW, Calgary, AB",699900,3,3
+A2009522,Calgary,AB,"34 New Brighton Circle SE, Calgary, AB",559900,3,3
+A2004597,Calgary,AB,"1115 2395 Eversyde Avenue SW, Calgary, AB",224900,2,1
+A1255646,Calgary,AB,"3101 73 Erin Woods Court SE, Calgary, AB",209900,2,2
+C5827918,Toronto,ON,"#423 1005 KING ST W, Toronto, ON",629000,1,1
+W5827885,Toronto,ON,"11 SUNNYBRAE CRES, Toronto, ON",1199000,3,2
+C5827921,Toronto,ON,"#714 629 KING ST, Toronto, ON",629000,1,1
+W5827929,Toronto,ON,"38 VEROBEACH BLVD, Toronto, ON",848888,4,2
+W5827880,Toronto,ON,"51 BURNFIELD AVE, Toronto, ON",2350000,3,4
+C5827952,Toronto,ON,"#ON 2007 HILLCREST AVE, Toronto, ON",795000,2,2
+W5827886,Toronto,ON,"#1012 816 LANSDOWNE AVE, Toronto, ON",729900,2,2
+E5826980,Toronto,ON,"#304 452 SCARBOROUGH GOLFCLUB RD, Toronto, ON",408000,2,2
+C5827246,Toronto,ON,"#PH05 15 FORT YORK BLVD, Toronto, ON",3750000,3,3
+W5827399,Toronto,ON,"33 WICKFORD DR, Toronto, ON",1879000,5,5
+C5827589,Toronto,ON,"137 SEATON ST, Toronto, ON",1780000,3,3
+E5827590,Toronto,ON,"411 MAIN ST, Toronto, ON",599000,2,1
+W5827624,Toronto,ON,"173 WALLACE AVE, Toronto, ON",1699000,5,4
+C5827707,Toronto,ON,"244 BENSON AVE, Toronto, ON",1569000,3,2
+C5827219,Toronto,ON,"#809 70 MILL ST, Toronto, ON",839000,2,2
+W5827724,Toronto,ON,"#213 2772 KEELE ST, Toronto, ON",499000,2,1
+C5827323,Toronto,ON,"#1406 10 BELLAIR ST, Toronto, ON",1539900,2,2
+C5827831,Toronto,ON,"#2808 33 BAY ST, Toronto, ON",1258000,3,2
+W5826908,Toronto,ON,"#213 20 SOUTHPORT ST, Toronto, ON",569000,2,2
+W5827909,Mississauga,ON,"3179 IBBETSON CRES, Mississauga, ON",1100000,4,3
+W5827928,Mississauga,ON,"#2109 1 VALHALLA INN RD, Toronto, ON",729900,3,2
+W5827892,Mississauga,ON,"38 ROYAL VISTA RD, Brampton, ON",915000,4,4
+W5827911,Mississauga,ON,"80A CORBY CRES, Brampton, ON",699000,3,3
+W5827935,Mississauga,ON,"50 ERINGATE DR, Toronto, ON",949000,3,2
+W5827299,Mississauga,ON,"660 ARBOR RD, Mississauga, ON",999000,4,3
+W5827400,Mississauga,ON,"3259 SCOTCH PINE GATE AVE, Mississauga, ON",1259000,5,4
+40349553,Mississauga,ON,"1457 WAKEHURST Crescent, Oakville, ON",1479000,4,3
+W5827557,Mississauga,ON,"#3203 208 ENFIELD PL, Mississauga, ON",736888,2,2
+W5827674,Mississauga,ON,"#30 6860 GLEN ERIN DR, Mississauga, ON",789900,4,3
+40349719,Mississauga,ON,"4085 PARKSIDE VILLAGE Drive Unit# 310, Mississauga, ON",749900,2,2
+W5826905,Mississauga,ON,"938 BLAIRHOLM AVE, Mississauga, ON",999000,4,3
+W5826773,Mississauga,ON,"2358 COBBINSHAW CIRC, Mississauga, ON",1089000,4,3
+W5826834,Mississauga,ON,"1425 CHRISEDEN DR, Mississauga, ON",4125000,4,5
+W5827351,Mississauga,ON,"128 PARK ST E, Mississauga, ON",1219000,3,4
+W5827448,Mississauga,ON,"63 VIVIANS CRES, Brampton, ON",1024990,3,3
+H4151093,Mississauga,ON,"80 ABSOLUTE Avenue Unit #311, Mississauga, ON",569420,1,2
+40349185,Mississauga,ON,"53 RAYSIDE Drive, Etobicoke, ON",1199919,5,2
+W5826874,Mississauga,ON,"52A TREEVIEW DR, Toronto, ON",1428800,4,4
+W5827446,Mississauga,ON,"11 ROSEMEADE AVE, Toronto, ON",1349900,5,3
+R2738552,Vancouver,BC,"208 8070 OAK STREET, Vancouver, BC",1179700,2,2
+R2738530,Vancouver,BC,"1106 5629 BIRNEY AVENUE, Vancouver, BC",1319000,2,2
+R2738528,Vancouver,BC,"1278 DUCHESS AVENUE, West Vancouver, BC",2198000,3,3
+R2738554,Vancouver,BC,"3206 CAROLINA STREET, Vancouver, BC",2198000,6,5
+R2738518,Vancouver,BC,"2005 4388 BUCHANAN STREET, Burnaby, BC",849900,2,2
+R2738548,Vancouver,BC,"201 8070 OAK STREET, Vancouver, BC",917700,1,1
+R2738556,Vancouver,BC,"202 8030 OAK STREET, Vancouver, BC",1379800,3,2
+R2738581,Vancouver,BC,"605 53 W HASTINGS STREET, Vancouver, BC",875000,1,1
+R2738546,Vancouver,BC,"102 8030 OAK STREET, Vancouver, BC",698800,1,1
+R2738543,Vancouver,BC,"3206 CAROLINA STREET, Vancouver, BC",2198000,6,5
+R2738527,Vancouver,BC,"167 2035 GLENAIRE DRIVE, North Vancouver, BC",1159000,3,2
+X5826720,Vancouver,BC,"3616 POINT GREY RD, Vancouver, BC",4880000,4,3
+R2738231,Vancouver,BC,"PH1 1550 ALBERNI STREET, Vancouver, BC",31880800,3,5
+R2738215,Vancouver,BC,"3403 1189 MELVILLE STREET, Vancouver, BC",2848000,3,3
+R2738301,Vancouver,BC,"204 565 17TH STREET, West Vancouver, BC",1150000,2,2
+R2738168,Vancouver,BC,"1403 1818 ALBERNI STREET, Vancouver, BC",2269900,2,2
+R2738296,Vancouver,BC,"2002 1550 FERN STREET, North Vancouver, BC",924000,2,2
+R2738293,Vancouver,BC,"101 5615 HAMPTON PLACE, Vancouver, BC",1050000,2,2
+202226988,Winnipeg,MB,"13 Hull Avenue, Winnipeg, MB",349900,2,1
+202227043,Winnipeg,MB,"190 Springwater Road, Winnipeg, MB",674900,3,3
+202227027,Winnipeg,MB,"475 Besant Street, Winnipeg, MB",349000,4,2
+202227046,Winnipeg,MB,"669 Alfred Avenue, Winnipeg, MB",169900,3,1
+202224448,Winnipeg,MB,"38 Inman Avenue, Winnipeg, MB",270000,2,1
+202226958,Winnipeg,MB,"32 SOUTHLANDS Drive, East St Paul, MB",1057000,5,3
+202226877,Winnipeg,MB,"55 Forestgate Avenue, Winnipeg, MB",499000,3,2
+202226999,Winnipeg,MB,"32 Crystal Avenue, Winnipeg, MB",198700,2,1
+202227009,Winnipeg,MB,"206 Yale Avenue, Winnipeg, MB",229900,2,1
+202225990,Winnipeg,MB,"20 Whidden Gate, Winnipeg, MB",599900,4,3
+202226895,Winnipeg,MB,"34 Hood Avenue, Winnipeg, MB",434900,3,3
+202227006,Winnipeg,MB,"207 Edward Avenue, Winnipeg, MB",319900,3,1
+202226121,Winnipeg,MB,"58 Lindenwood Drive, Winnipeg, MB",649900,4,3
+202226911,Winnipeg,MB,"21 DISCOVERY Cove, Winnipeg, MB",1490000,6,5
+202226898,Winnipeg,MB,"251 Cullen Drive, Winnipeg, MB",349900,4,2
+202226907,Winnipeg,MB,"150 Nordstrom Drive, Winnipeg, MB",499900,3,3
+202226946,Winnipeg,MB,"789 Sherburn Street, Winnipeg, MB",229900,2,1
+202225745,Winnipeg,MB,"389 Beverley Street, Winnipeg, MB",74900,3,1
+202225532,Winnipeg,MB,"11 Crocker Place, Winnipeg, MB",899900,4,3
