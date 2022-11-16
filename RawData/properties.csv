@@ -1,0 +1,44 @@
+MLS,City,Province,Address,Price,NumberOfBeds,NumberOfBaths,Footage
+SK913993,Saskatoon,SK,"207 Lehrer PLACE, Saskatoon, SK S7R 0L4",669900,3,2,1744
+SK914061,Saskatoon,SK,"3104 Ortona STREET, Saskatoon, SK S7M 3R4",619900,3,3,1470
+SK914086,Saskatoon,SK,"739 Hastings COVE, Saskatoon, SK S7V 0G6",899900,4,3,1837
+SK914075,Saskatoon,SK,"334 Crean CRESCENT, Saskatoon, SK S7J 3X2",419900,4,3,1295
+SK914082,Saskatoon,SK,"2435 Rosewood DRIVE, Saskatoon, SK S7V 0Z3",554300,3,3,1737
+SK914108,Saskatoon,SK,"1 Bow COURT, Saskatoon, SK S7K 1H9",399000,4,3,1136
+SK914132,Saskatoon,SK,"46 Peeling AVENUE, Saskatoon, SK S7M 4K4",329900,4,2,900
+SK914049,Saskatoon,SK,"831 F AVENUE N, Saskatoon, SK S7L 1W6",419000,5,3,1144
+SK914096,Saskatoon,SK,"739 L AVENUE S, Saskatoon, SK S7M 2H8",229900,3,2,835
+E4320360,Edmonton,AB,"14611 95th St NW, Edmonton, AB T5E 3Y7",575000,6,2,1513
+E4320364,Edmonton,AB,"10465 42nd Ave NW, Edmonton, AB T6J 7C7",429900,2,3,1215
+E4320358,Edmonton,AB,"10346 142nd St NW, Edmonton, AB T5N 2P1",393000,5,2,1387
+E4320355,Edmonton,AB,"5512 145th Ave NW, Edmonton, AB T5A 3R3",185000,3,3,1019
+E4320309,Edmonton,AB,"4611 128th Ave NW, Edmonton, AB T5A 2M7",399900,4,3,1475
+E4320357,Edmonton,AB,"7339 S Terwillegar Dr NW #1418, Edmonton, AB T6R 0M1",130000,1,1,628
+E4320331,Edmonton,AB,"1711 109th St NW, Edmonton, AB T6J 5Z8",519900,5,4,2161
+E4320291,Edmonton,AB,"13239 Delwood Rd NW, Edmonton, AB T5C 3B5",299990,5,2,1072
+E4320295,Edmonton,AB,"12631 161st Ave NW, Edmonton, AB T5X 4W7",350000,4,3,1083
+W5827705,Mississauga,ON,"485 Meadows Blvd #12, Mississauga, ON L4Z 1H1",824900,3,3,0
+W5827674,Mississauga,ON,"6860 Glen Erin Dr UNIT 30, Mississauga, ON L5N 2E1",789900,3,3,0
+W5827547,Mississauga,ON,"325 Webb Dr #310, Mississauga, ON L5B 3Z9",549999,2,2,0
+W5827299,Mississauga,ON,"660 Arbor Rd, Mississauga, ON L5G 2J9",999000,4,3,0
+W5826773,Mississauga,ON,"2358 Cobbinshaw Cir, Mississauga, ON L5N 2G3",1089000,3,3,0
+40331876,Mississauga,ON,"2280 Doulton Dr, Mississauga, ON L5H 3M1",13890000,5,9,8138
+40181595,Mississauga,ON,"1343 Blythe Rd, Mississauga, ON L5H 2C2",24500000,7,10,12553
+202225990,Halifax,NS,"55 Kearney Lake Rd, Halifax, NS B3M 2S6",569900,2,2,1886
+202215459,Halifax,NS,"1160 Rockcliffe St, Halifax, NS B3H 3Y6",7450000,4,5,5550
+202226090,Halifax,NS,"1650 Granville St #904, Halifax, NS B3J 0E1",869000,2,2,963
+202225003,Halifax,NS,"68 Hartlen Ave, Halifax, NS B3R 1R6",379900,3,2,1688
+202223264,Halifax,NS,"1233 Purcells Cove Rd, Halifax, NS B3P 1B3",499000,3,2,1146
+202212337,Halifax,NS,"2947 Purcells Cove Rd, Halifax, NS B3P 2G2",1995000,3,3,2720
+202224206,Halifax,NS,"13 McFatridge Rd, Halifax, NS B3N 2R2",369900,2,2,1276
+202225587,Halifax,NS,"29 Gateway Rd, Halifax, NS B3M 1M6",499900,4,2,1981
+202223702,Halifax,NS,"26 Springvale Ave, Halifax, NS B3N 2A4",514900,3,2,1397
+R2738427,Vancouver,BC,"1020 Harwood St #1504, Vancouver, BC V6E 4R1",1199000,2,2,940
+R2738459,Vancouver,BC,"1718 Venables St #404, Vancouver, BC V5L 2H4",689000,1,1,703
+R2738462,Vancouver,BC,"1330 Burrard St #306, Vancouver, BC V6Z 2B8",519000,2,1,538
+R2738122,Vancouver,BC,"4515 W 14th Ave, Vancouver, BC V6R 2Y5",3088000,5,4,2445
+R2738271,Vancouver,BC,"3678 E 25th Ave, Vancouver, BC V5R 1K5",1788800,4,2,2108
+R2738190,Vancouver,BC,"3537 Osler St, Vancouver, BC V6H 2W4",23800000,5,9,10880
+R2738436,Vancouver,BC,"621 W 51st Ave, Vancouver, BC V6P 1B9",4289000,6,7,6116
+R2697014,Vancouver,BC,"1318 Minto Cres, Vancouver, BC V6H 2J5",24800000,5,9,9949
+R2738458,Vancouver,BC,"345 E 64th Ave, Vancouver, BC V5X 2M8",1699000,5,4,2405
