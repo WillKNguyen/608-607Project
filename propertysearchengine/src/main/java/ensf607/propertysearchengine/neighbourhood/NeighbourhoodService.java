@@ -15,14 +15,4 @@ public class NeighbourhoodService {
     public NeighbourhoodService(NeighbourhoodRepository neighbourhoodRepository) {
         this.neighbourhoodRepository = neighbourhoodRepository;
     }
-
-    // public Optional<Neighbourhood> getNeighbourhoodByID(int id) {
-    //     return neighbourhoodRepository.findById(id);
-    // }
-
-    // public void addNewneighbourhood(Neighbourhood neighbourhood) {
-    //     neighbourhoodRepository.save(neighbourhood);
-    // }
-
-
 }

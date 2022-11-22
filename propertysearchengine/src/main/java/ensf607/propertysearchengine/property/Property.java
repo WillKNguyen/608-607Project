@@ -9,6 +9,8 @@ import ensf607.propertysearchengine.user.*;
 import javax.persistence.*;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.annotation.CreatedDate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -52,7 +54,7 @@ public class Property implements Serializable {
     @JoinColumn(name="neighbourhood_id", referencedColumnName = "id")
     private Neighbourhood neighbourhood;
 
-    @OneToMany(mappedBy = "")
+    @OneToMany(mappedBy = "id")
     private Set<PriceHistory> priceHistory = new HashSet<>();
 
     @JsonIgnore
@@ -60,8 +62,10 @@ public class Property implements Serializable {
     @JoinColumn(name="listedBy", referencedColumnName = "email")
     private User listingUser;
 
+
     @JsonIgnore
     @ManyToMany(mappedBy = "favourites")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Set<User> favouritedBy = new HashSet<>();
     
     // Features
@@ -156,10 +160,40 @@ public class Property implements Serializable {
         this.daysSinceListed = daysSinceListed;
     }
 
+    public Neighbourhood getNeighbourhood() {
+        return this.neighbourhood;
+    }
 
+    public void setNeighbourhood(Neighbourhood neighbourhood) {
+        this.neighbourhood = neighbourhood;
+    }
 
+    public Set<PriceHistory> getPriceHistory() {
+        return this.priceHistory;
+    }
 
+    public void setPriceHistory(Set<PriceHistory> priceHistory) {
+        this.priceHistory = priceHistory;
+    }
 
+    public User getListingUser() {
+        return this.listingUser;
+    }
 
+    public String getListingUserID() {
+        return this.listingUser.getEmail();
+    }
+
+    public void setListingUser(User listingUser) {
+        this.listingUser = listingUser;
+    }
+
+    public Set<User> getFavouritedBy() {
+        return this.favouritedBy;
+    }
+
+    public void setFavouritedBy(Set<User> favouritedBy) {
+        this.favouritedBy = favouritedBy;
+    }
  
 }

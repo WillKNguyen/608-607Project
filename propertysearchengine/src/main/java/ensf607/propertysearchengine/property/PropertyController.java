@@ -1,5 +1,6 @@
 package ensf607.propertysearchengine.property;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,10 +53,25 @@ public class PropertyController {
         }
     }
 
-    @PostMapping("/add_property")
-    public void registerNewProperty(Property property) {
-        propertyService.addNewProperty(property);
+    @GetMapping("/remove")
+    public String removeAListing(@RequestParam int mls, Principal principal) {
+        String userEmail = principal.getName();
+        return propertyService.removeAListing(mls, userEmail);
     }
+
+    @GetMapping("/update")
+    public String updatePrice(@RequestParam int mls, @RequestParam int newprice, Principal principal) {
+        String userEmail = principal.getName();
+        return propertyService.updatePrice(mls, newprice, userEmail);
+    }
+
+    @PostMapping("/add_property")
+    public void registerNewProperty(Property property, Principal principal) {
+        String userEmail = principal.getName();
+        propertyService.addNewProperty(property, userEmail);
+    }
+
+
 
 }
 

@@ -19,7 +19,7 @@ public class UserService {
     }
 
     @Autowired
-    PropertyRepository propertyRepository;
+    private PropertyRepository propertyRepository;
 
 
     public Optional<User> getUserByEmail(String email) {

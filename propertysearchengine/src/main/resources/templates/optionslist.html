@@ -62,9 +62,47 @@
         <h3><a th:href="@{api/v1/property/add}">List new property</a></h3> <!-- connect with user, must be in a predefined neighbourhood, build up price history -->
 
 
-        <h3><a th:href="@{/removelisting}">Remove Listing</a></h3> 
-        <h3><a th:href="@{/updateprice}">Update listing price</a></h3> <!-- build up price history -->
-        <h3><a th:href="@{/viewpricehistory}">View Price History</a></h3> 
+
+        <form th:action="@{api/v1/property/remove}" method="get" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">MLS: </label>
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" required />
+                        <button type="submit" class="btn btn-primary">Remove Listing</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+
+        <form th:action="@{api/v1/property/update}" method="get" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">MLS: </label>
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" required />
+                    </div>
+                    <label class="col-4 col-form-label">New Price: </label>
+                    <div class="col-8">
+                        <input type="number" id="newprice" name="newprice" class="form-control" required />
+                        <button type="submit" class="btn btn-primary">Update Price</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+
+
+        <form th:action="@{api/v1/pricehistory/viewpricehistory}" method="get" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">MLS: </label>
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" required />
+                        <button type="submit" class="btn btn-primary">View Price History</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
 
     </div>
     

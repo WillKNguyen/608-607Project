@@ -4,6 +4,9 @@ package ensf607.propertysearchengine.user;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import ensf607.propertysearchengine.property.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -26,6 +29,7 @@ public class User implements Serializable {
 
     
     @ManyToMany
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinTable(
         name = "favourite_properties",
         joinColumns = @JoinColumn(name = "user_email"),
