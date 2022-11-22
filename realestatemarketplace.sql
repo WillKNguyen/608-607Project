@@ -286,22 +286,25 @@ VALUES
 
 
 DROP TABLE IF EXISTS LISTINGS;
-CREATE TABLE LISTINGS AS
+CREATE TABLE LISTINGS AS (
 	SELECT Email, MLS
     FROM SELLER AS S, PROPERTY AS P
-    WHERE S.Email = P.SoldBy;
-    
+    WHERE S.Email = P.SoldBy);
+        
+ALTER TABLE LISTINGS 
+	ADD CONSTRAINT fk_Email FOREIGN KEY (Email) REFERENCES SELLER(Email),
+    ADD CONSTRAINT fk_MLS FOREIGN KEY (MLS) REFERENCES PROPERTY(MLS);
     
 DROP TABLE IF EXISTS PRICE_HISTORY;
 CREATE TABLE PRICE_HISTORY (
-	UpdateDate		date	not null,
+	UpdateDate		timestamp	not null default current_timestamp,
 	MLS				varchar(10),
-    Price			float,
+    OldPrice		float,
     primary key (UpdateDate),
     foreign key (MLS) references PROPERTY(MLS)
 );
 
-INSERT INTO PRICE_HISTORY (UpdateDate, MLS, Price)
+INSERT INTO PRICE_HISTORY (UpdateDate, MLS, OldPrice)
 VALUES
 ('2022-09-01', 'SK913993', 680000),
 ('2022-09-02', 'SK914061', 630000),
@@ -322,3 +325,34 @@ VALUES
 ('eric@ucalgary.ca', 'SK913993', '2022-10-01'),
 ('will@ucalgary.ca', 'SK914061', '2022-10-02'),
 ('will@ucalgary.ca', 'SK914153', '2022-10-03');
+
+
+-- create after update trigger to update the price history when the property price goes up or down
+DROP TRIGGER IF EXISTS pricechange;
+DELIMITER $$
+CREATE TRIGGER pricechange
+AFTER UPDATE 
+ON PROPERTY FOR EACH ROW
+BEGIN
+	IF OLD.CurrentPrice <> NEW.CurrentPrice THEN
+		INSERT INTO PRICE_HISTORY(MLS, OldPrice)
+		VALUES(old.MLS, old.CurrentPrice);
+    END IF;
+END$$
+DELIMITER ;
+
+
+-- create before delete trigger to remove the listing from properties when listing is taken down from the listings table
+-- this should really be delete on cascade. delete trigger is used for archiving rows in another table, which we don't have.
+DROP TRIGGER IF EXISTS droplisting;
+DELIMITER $$
+CREATE TRIGGER droplisting
+BEFORE DELETE
+ON PROPERTY FOR EACH ROW
+BEGIN
+	DELETE FROM PROPERTY AS P WHERE P.MLS = MLS; -- delete from listing table
+    DELETE FROM PRICE_HISTORY AS PH WHERE PH.MLS = MLS; -- delete from price history table
+    DELETE FROM SAVED_BY AS S WHERE S.MLS = MLS; -- delete from favourites table
+END$$
+DELIMITER ;
+    
