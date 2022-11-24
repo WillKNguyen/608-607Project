@@ -8,10 +8,10 @@ USE realestatemarketplace;
 DROP TABLE IF EXISTS web_user;
 CREATE TABLE web_user (
 	Email			varchar(255)	not null,
-    FName			varchar(30),
-	LName			varchar(30),
-	Phone			varchar(10),
-    LoginPassword	varchar(30),
+    FName			varchar(30)		not null,
+	LName			varchar(30)		not null,
+	Phone			varchar(10)		not null,
+    LoginPassword	varchar(30)		not null,
     primary key (Email)
 );
 
@@ -37,19 +37,20 @@ CREATE TABLE neighbourhood (
 
 DROP TABLE IF EXISTS property;
 CREATE TABLE property (
-	MLS					varchar(10)	not null,
-    Address				varchar(255),
-    CurrentPrice		float,
-    DateListed			date,
+	MLS					varchar(10)		not null,
+    Address				varchar(255)	not null,
+    CurrentPrice		float			not null,
+    DateListed			date			not null,
     PropertyType		varchar(30),
     YearBuilt			integer,
-    Bedrooms			integer,
-    Bathrooms			integer,
-    LotSize				float,
-    SoldBy				varchar(255),
-    NId					integer,
+    Bedrooms			integer			not null,
+    Bathrooms			integer			not null,
+    LotSize				float			not null,
+    SoldBy				varchar(255)	not null,
+    NId					integer			not null,
     primary key (MLS),
-    foreign key (NId) references neighbourhood(Id)
+    foreign key (NId) references neighbourhood(Id),
+    foreign key (SoldBy) references re_agent(email)
     ON DELETE CASCADE
 );
 
@@ -66,7 +67,7 @@ DROP TABLE IF EXISTS price_history;
 CREATE TABLE price_history (
 	MLS				varchar(10)	not null,
 	DateChanged		date	not null default (current_date),
-    Price			float,
+    Price			float	not null,
     primary key (MLS, DateChanged),
     foreign key (MLS) references property(MLS)
     ON DELETE CASCADE
@@ -82,10 +83,6 @@ CREATE TABLE favourites (
     foreign key(MLS) references property(MLS)
     ON DELETE CASCADE
 );
--- create function CheckFunction(mls varchar(10))
--- returns varchar(255)
--- DETERMINISTIC
--- return (SELECT soldby FROM property WHERE property.mls = mls);
 
 DROP TABLE IF EXISTS appointment;
 CREATE TABLE appointment (
@@ -98,7 +95,6 @@ CREATE TABLE appointment (
     foreign key (SellerEmail) references re_agent(Email),
     foreign key (MLS) references property(MLS)
     ON DELETE CASCADE
---     check (CheckFunction(MLS) = SellerEmail)
 );
 
 
@@ -131,6 +127,19 @@ AFTER DELETE
 ON property FOR EACH ROW
 	UPDATE neighbourhood SET NumberOfListings = NumberOfListings - 1
     WHERE Id = OLD.NId;
+    
+DROP TRIGGER IF EXISTS appointmentcheck;
+DELIMITER $$
+CREATE TRIGGER appointmentcheck
+BEFORE INSERT ON appointment
+FOR EACH ROW
+BEGIN
+	IF (NEW.SellerEmail <> (SELECT SoldBy FROM property WHERE property.MLS = NEW.MLS)) THEN
+		Signal SQLstate '45000'
+        SET message_text = "This agent has not listed this property.";
+    END IF;
+END$$
+DELIMITER ;
 
 
 -- -----------------------    
