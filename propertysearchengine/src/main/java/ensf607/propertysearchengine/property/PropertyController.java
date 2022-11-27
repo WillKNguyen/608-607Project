@@ -41,6 +41,11 @@ public class PropertyController {
        return propertyService.viewAllListings();
     }
 
+    @GetMapping("/viewalllistingssorted")
+    public List<Property> viewAllListingsSorted() {
+       return propertyService.viewAllListingsSorted();
+    }
+
     @GetMapping("/viewalisting")
     public Property viewAListing(@RequestParam int mls) {
         Optional<Property> propertyByID = propertyService.viewListingByMLS(mls);

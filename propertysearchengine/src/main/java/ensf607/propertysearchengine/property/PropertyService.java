@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import ensf607.propertysearchengine.user.*;
@@ -48,6 +49,10 @@ public class PropertyService {
 
     public List<Property> viewAllListings() {
         return propertyRepository.findAll();
+    }
+
+    public List<Property> viewAllListingsSorted() {
+        return propertyRepository.findAll(Sort.by(Sort.Direction.ASC, "Address"));
     }
 
     public String removeAListing(int mls, String userEmail) {
