@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"></html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Willow</title>
-    <link rel="stylesheet" href="design.css">
-    <link rel="icon" href="pics/favicon.png">
+    <link th:href="@{/css/design.css}" rel="stylesheet" />
+    <link th:href= "@{/css/pics/favicon.png}" rel="shortcut icon" type="image/png"/>
 </head>
 <body>
     <div class="header">
         <div class="top-left">
             <ul class="head">
-                <li>Buy</li>
-                <li>Sell</li>
-                <li>Agent Finder</li>
+                <li><a th:href="@{api/v1/property/viewalllistings}">Buy</a> </li>
+                <li><a th:href="@{api/v1/property/add}">Sell</a></li>
+                <li><a th:href="@{/printalllistings}">Agent Finder</a></li>
             </ul>
         </div>
         <div class="logo">
-            <img class="logopic" src="pics/logo.png" alt="project logo">
-            <div class="willow">Willow</div>
+            <img class="logopic" th:src="@{/css/pics/logo.png}" alt="project logo">
+            <div class="willow"><a th:href="@{/}">Willow</a></div>
         </div>
         <div class="top-right">
             <ul class="head">
                 <li>About Us</li>
                 <li>Help</li>
-                <li>
-                    <div class="pp"></div>
-                </li>
+                <div class="dropdown" style="float: right;">
+                    <button class="pp"></button>
+                    <div class="dropdown-content">
+                        <a th:href="@{/login}">Log In</a>
+                        <a th:href="@{/register}">Register</a>
+                    </div>
+                </div>
             </ul>
         </div>
     </div>
@@ -35,15 +40,29 @@
     <div class="center1">
         <h1>Let's Find Your Dream Home</h1>
         <div class="searchbar">
-            <input type="text" placeholder="Enter a city or province" style="height: 45px; width: 500px;">
-        <button style="height: 50px;">🔎</button>
+            <!-- <input type="number" placeholder="Enter a city or province" style="height: 45px; width: 500px;"
+            id="mls" name="mls">
+            <button class="search" style="height: 50px;">
+                <a th:href="@{api/v1/property/viewalisting}">🔎</a>
+            </button> -->
+
+            <form th:action="@{api/v1/property/viewalisting}"
+                method="get" style="max-width: 600;">
+                <div class="m-3">
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" placeholder="Enter MLS of Property" 
+                        style="height: 45px; width: 500px;" required />
+                        <button type="submit" class="btn btn-primary" style="height: 51px; margin-left: -4px; ">🔎</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <div class="center2">
         <div class="banner">Featured Homes </div>
         <div class="propmatrix">
             <div class="card">
-                <img class="housepic" src="pics/van.jpg" alt="House1">
+                <img class="housepic" th:src="@{/css/pics/van.jpg}" alt="House1">
                 <div class="container">
                     <h4>CA$31,880,800</h4>
                     <div class="attributes">
@@ -55,7 +74,7 @@
                 </div>
             </div>
             <div class="card">
-                <img class="housepic" src="pics/tor.jpg" alt="House2">
+                <img class="housepic" th:src="@{/css/pics/tor.jpg}" alt="House2">
                 <div class="container">
                     <h4>CA$3,750,000</h4>
                     <div class="attributes">
@@ -67,7 +86,7 @@
                 </div>
             </div>
             <div class="card">
-                <img class="housepic" src="pics/calg.jpg" alt="House3">
+                <img class="housepic" th:src="@{/css/pics/calg.jpg}" alt="House3">
                 <div class="container">
                     <h4>CA$499,900</h4>
                     <div class="attributes">
@@ -79,7 +98,7 @@
                 </div>
             </div>
             <div class="card">
-                <img class="housepic" src="pics/sask.jpg" alt="House4">
+                <img class="housepic" th:src="@{/css/pics/sask.jpg}" alt="House4">
                 <div class="container">
                     <h4>CA$1,275,000</h4>
                     <div class="attributes">
