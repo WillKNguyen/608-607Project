@@ -29,6 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+    
      
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
@@ -56,6 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
             .and()
             .logout().logoutSuccessUrl("/").permitAll();
+        http.cors().and().csrf().disable(); // For postman to work
     }
      
      @Override

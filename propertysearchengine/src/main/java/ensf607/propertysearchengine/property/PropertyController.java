@@ -2,11 +2,10 @@ package ensf607.propertysearchengine.property;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -21,20 +20,6 @@ public class PropertyController {
         this.propertyService = propertyService;
     }
 
-    @GetMapping("/search/{bathrooms}")
-    public List<Property> searchForProperty(@PathVariable int bathrooms) {
-
-        Optional<List<Property>> property = propertyService.getPropertyByBathrooms(bathrooms);
-
-        if(!property.isPresent()) {
-                throw new IllegalStateException("Requested property cannot be found!");
-        }
-        else {
-            return property.get();
-        }
-        
-
-    }
 
     @GetMapping("/viewalllistings")
     public List<Property> viewAllListings() {
@@ -64,16 +49,33 @@ public class PropertyController {
         return propertyService.removeAListing(mls, userEmail);
     }
 
+    @GetMapping("/remove_postman")
+    public String removeAListing(@RequestParam int mls) {
+        String userEmail = "ardit.baboci@gmail.com";
+        return propertyService.removeAListing(mls, userEmail);
+    }
+
     @GetMapping("/update")
     public String updatePrice(@RequestParam int mls, @RequestParam int newprice, Principal principal) {
         String userEmail = principal.getName();
         return propertyService.updatePrice(mls, newprice, userEmail);
     }
 
+    @GetMapping("/update_price_postman")
+    public String updatePricePostman(@RequestParam int mls, @RequestParam int newprice) {
+        String userEmail = "ardit.baboci@gmail.com";
+        return propertyService.updatePrice(mls, newprice, userEmail);
+    }
+
     @PostMapping("/add_property")
-    public void registerNewProperty(Property property, Principal principal) {
+    public String registerNewProperty(Property property, Principal principal) {
         String userEmail = principal.getName();
-        propertyService.addNewProperty(property, userEmail);
+        return propertyService.addNewProperty(property, userEmail);
+    }
+
+    @PostMapping("/add_property_postman")
+    public String registerNewPropertyPostman(@RequestBody Map<String, String> json) {
+        return propertyService.addNewPropertyPostman(json.get("address"), json.get("propertyType"), Integer.parseInt(json.get("yearBuilt")), Integer.parseInt(json.get("neighbourhood")), Double.parseDouble(json.get("bathrooms")), Double.parseDouble(json.get("bedrooms")), Integer.parseInt(json.get("price")));
     }
 
 

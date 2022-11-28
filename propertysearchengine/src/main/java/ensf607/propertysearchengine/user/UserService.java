@@ -26,15 +26,7 @@ public class UserService {
         return userRepository.findById(email);
     }
 
-    public void addNewUser(User user) {
-        Optional<User> userByEmail = getUserByEmail(user.getEmail());
-        if (userByEmail.isPresent()) {
-            throw new IllegalStateException("This email is already taken!");
-        }
-        userRepository.save(user);
-    }
-
-    public void addFavourite(String userEmail, Integer propertyMLS) {
+    public String addFavourite(String userEmail, Integer propertyMLS) {
         Optional<User> userByEmail = getUserByEmail(userEmail);
         if (!userByEmail.isPresent()) {
             throw new IllegalStateException("This user does not exist");
@@ -49,9 +41,12 @@ public class UserService {
 
         user.addFavourite(property);
         userRepository.save(user);
+
+        return "MLS " + propertyMLS + " has been added to your favourites!";
     }
 
-    public void removeFavourite(String userEmail, Integer propertyMLS) {
+
+    public String removeFavourite(String userEmail, Integer propertyMLS) {
         Optional<User> userByEmail = getUserByEmail(userEmail);
         if (!userByEmail.isPresent()) {
             throw new IllegalStateException("This user does not exist");
@@ -66,6 +61,8 @@ public class UserService {
 
         user.removeFavourite(property);
         userRepository.save(user);
+
+        return "MLS " + propertyMLS + " has been removed from your favourites!";
     }
 
 

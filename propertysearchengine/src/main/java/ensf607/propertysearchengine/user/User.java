@@ -1,15 +1,11 @@
 package ensf607.propertysearchengine.user;
 
-// import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import ensf607.propertysearchengine.property.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
 import java.util.HashSet;

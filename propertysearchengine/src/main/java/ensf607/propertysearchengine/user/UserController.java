@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "api/v1/user")
@@ -17,37 +16,27 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/login/{email}/{password}")
-    public Boolean verifyPassword(@PathVariable("email") String email, @PathVariable("password") String password) {
-
-        Optional<User> user = userService.getUserByEmail(email);
-
-        if(!user.isPresent()) {
-            return false;
-        }
-        else {
-            if (user.get().getPassword().equals(password)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    @PostMapping("/register")
-    public void registerNewUser(@RequestBody User user) {
-        userService.addNewUser(user);
-    }
-
     @GetMapping("/addtofavourites") 
-    public void addFavouriteToUser(@RequestParam int mls, Principal principal) {
+    public String addFavouriteToUser(@RequestParam int mls, Principal principal) {
         String userEmail = principal.getName();
-        userService.addFavourite(userEmail, mls);
+        return userService.addFavourite(userEmail, mls);
+    }
+
+    @GetMapping("/addtofavourites_postman") 
+    public String addFavouriteToUserPostman(@RequestParam int mls) {
+        String userEmail = "ardit.baboci@gmail.com";
+        return userService.addFavourite(userEmail, mls);
     }
 
     @GetMapping("/removefromfavourites") 
-    public void removeFavouriteFromUser(@RequestParam int mls, Principal principal) {
+    public String removeFavouriteFromUser(@RequestParam int mls, Principal principal) {
         String userEmail = principal.getName();
-        userService.removeFavourite(userEmail, mls);
+        return userService.removeFavourite(userEmail, mls);
+    }
+
+    @GetMapping("/removefromfavourites_postman") 
+    public String removeFavouriteFromUser(@RequestParam int mls) {
+        String userEmail = "ardit.baboci@gmail.com";
+        return userService.removeFavourite(userEmail, mls);
     }
 }
