@@ -1,4 +1,4 @@
-const viewall_api_url = "http://localhost:8080/api/v1/property/viewalllistings";
+var viewall_api_url = "http://localhost:8080/api/v1/property/viewalllistings";
 
 async function getAPI(url){
     const response = await fetch(url);
@@ -40,4 +40,14 @@ function show(data){
     document.getElementById("listings").innerHTML = tab;
 }
 
-// console.log("hi");
+const sortBtn = document.querySelector('.sort');
+sortBtn.addEventListener('click', function(e){
+    viewall_api_url = "http://localhost:8080/api/v1/property/viewalllistingssorted";
+    getAPI(viewall_api_url);
+});
+
+const unsortBtn = document.querySelector('.unsort');
+unsortBtn.addEventListener('click', function(e){
+    viewall_api_url = "http://localhost:8080/api/v1/property/viewalllistings";
+    getAPI(viewall_api_url);
+});

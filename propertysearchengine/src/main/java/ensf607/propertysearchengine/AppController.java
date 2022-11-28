@@ -53,6 +53,11 @@ public class AppController {
         return "all_listings";
     }
 
+    @GetMapping("/listing_data")
+    public String listing() {
+        return "listing_data";
+    }
+
     @GetMapping("api/v1/property/add")
     public String addNewProperty(Model model) {
         model.addAttribute("property", new Property());
