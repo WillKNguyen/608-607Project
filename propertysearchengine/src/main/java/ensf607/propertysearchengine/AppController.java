@@ -63,4 +63,14 @@ public class AppController {
         model.addAttribute("property", new Property());
         return "add_property_form";
     }
+
+    @GetMapping("/favorites")
+    public String favorites() {
+        return "my_favorites";
+    }
+
+    @GetMapping("my_listings")
+    public String myListings() {
+        return "my_listings";
+    }
 }

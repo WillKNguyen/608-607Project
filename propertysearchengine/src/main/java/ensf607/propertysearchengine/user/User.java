@@ -91,4 +91,11 @@ public class User implements Serializable {
         favourites.remove(property);
     }
 
+    public Set<Property> getFavourites() {
+        return favourites;
+    }
+
+    public Set<Property> getListings() {
+        return listings;
+    }
 }

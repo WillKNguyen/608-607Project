@@ -7,6 +7,8 @@ import ensf607.propertysearchengine.property.PropertyRepository;
 import ensf607.propertysearchengine.property.*;
 
 import java.util.Optional;
+import java.util.Set;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -68,5 +70,15 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public Set<Property> getUsersFavourite (String userEmail){
+        Optional<User> userByEmail = getUserByEmail(userEmail);
+        User user = userByEmail.get();
+        return user.getFavourites();
+    }
 
+    public Set<Property> getUsersListings (String userEmail){
+        Optional<User> userByEmail = getUserByEmail(userEmail);
+        User user = userByEmail.get();
+        return user.getListings();
+    }
 }

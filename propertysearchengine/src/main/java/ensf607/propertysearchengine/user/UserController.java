@@ -3,8 +3,11 @@ package ensf607.propertysearchengine.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import ensf607.propertysearchengine.property.Property;
+
 import java.security.Principal;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @RequestMapping(path = "api/v1/user")
@@ -49,5 +52,17 @@ public class UserController {
     public void removeFavouriteFromUser(@RequestParam int mls, Principal principal) {
         String userEmail = principal.getName();
         userService.removeFavourite(userEmail, mls);
+    }
+
+    @GetMapping("/getfavourites") 
+    public Set<Property> getUsersFavourite(Principal principal) {
+        String userEmail = principal.getName();
+        return userService.getUsersFavourite(userEmail);
+    }
+
+    @GetMapping("/getmylistings")
+    public Set<Property> getUsersListings(Principal principal) {
+        String userEmail = principal.getName();
+        return userService.getUsersListings(userEmail);
     }
 }

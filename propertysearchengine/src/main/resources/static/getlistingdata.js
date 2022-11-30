@@ -46,6 +46,32 @@ function show(data, hasData){
             </tr>`;
 
         document.getElementById("listings").innerHTML = tab;
+
+        const addBtn = document.createElement("button");
+        addBtn.textContent = "Add to Favorites";
+        addBtn.classList = "add";
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Remove from Favorites";
+        delBtn.classList = "remove";
+
+        const body = document.querySelector('body');
+        const status = document.createElement("h4");
+        body.appendChild(addBtn);
+        body.appendChild(delBtn);
+        body.appendChild(status);
+
+        addBtn.addEventListener('click', function(e){
+            var add_to_fav = "http://localhost:8080/api/v1/user/addtofavourites?mls=" + mls;
+            fetch(add_to_fav);
+            status.textContent = "Property added successfully";
+        })
+
+        delBtn.addEventListener('click', function(e){
+            var remove_fav = "http://localhost:8080/api/v1/user/removefromfavourites?mls=" + mls;
+            fetch(remove_fav);
+            status.textContent = "Property removed successfully";
+        })
+
     }
     else{
         title[0].textContent = "This property does not exist!";
