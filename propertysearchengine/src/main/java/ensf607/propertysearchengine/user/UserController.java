@@ -22,7 +22,6 @@ public class UserController {
     @GetMapping("/addtofavourites") 
     public String addFavouriteToUser(@RequestParam int mls, Principal principal) {
         String userEmail = principal.getName();
-        userService.addFavourite(userEmail, mls);
         return userService.addFavourite(userEmail, mls);
     }
 
@@ -35,7 +34,6 @@ public class UserController {
     @GetMapping("/removefromfavourites") 
     public String removeFavouriteFromUser(@RequestParam int mls, Principal principal) {
         String userEmail = principal.getName();
-        userService.removeFavourite(userEmail, mls);
         return userService.removeFavourite(userEmail, mls);
     }
 
@@ -45,15 +43,18 @@ public class UserController {
         return userService.removeFavourite(userEmail, mls);
     }
 
+
+    @GetMapping("/getmylistings") 
+    public Set<Property> getListings(Principal principal) {
+        String userEmail = principal.getName();
+        return userService.getUsersListings(userEmail);
+    }
+
     @GetMapping("/getfavourites") 
-    public Set<Property> getUsersFavourite(Principal principal) {
+    public Set<Property> getFavourites(Principal principal) {
         String userEmail = principal.getName();
         return userService.getUsersFavourite(userEmail);
     }
 
-    @GetMapping("/getmylistings")
-    public Set<Property> getUsersListings(Principal principal) {
-        String userEmail = principal.getName();
-        return userService.getUsersListings(userEmail);
-    }
+
 }
