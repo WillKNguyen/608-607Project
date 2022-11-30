@@ -45,4 +45,15 @@ public class UserController {
         return userService.removeFavourite(userEmail, mls);
     }
 
+    @GetMapping("/getfavourites") 
+    public Set<Property> getUsersFavourite(Principal principal) {
+        String userEmail = principal.getName();
+        return userService.getUsersFavourite(userEmail);
+    }
+
+    @GetMapping("/getmylistings")
+    public Set<Property> getUsersListings(Principal principal) {
+        String userEmail = principal.getName();
+        return userService.getUsersListings(userEmail);
+    }
 }
