@@ -3,10 +3,7 @@ package ensf607.propertysearchengine.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import ensf607.propertysearchengine.property.Property;
-
 import java.security.Principal;
-import java.util.Set;
 
 @RestController
 @RequestMapping(path = "api/v1/user")

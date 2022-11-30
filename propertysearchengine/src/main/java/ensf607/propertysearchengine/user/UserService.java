@@ -8,7 +8,6 @@ import ensf607.propertysearchengine.property.*;
 
 import java.util.Optional;
 import java.util.Set;
-import java.util.List;
 
 @Service
 public class UserService {
