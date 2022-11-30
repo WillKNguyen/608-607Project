@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import ensf607.propertysearchengine.property.Property;
 
 import java.security.Principal;
-import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -20,49 +19,30 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/login/{email}/{password}")
-    public Boolean verifyPassword(@PathVariable("email") String email, @PathVariable("password") String password) {
-
-        Optional<User> user = userService.getUserByEmail(email);
-
-        if(!user.isPresent()) {
-            return false;
-        }
-        else {
-            if (user.get().getPassword().equals(password)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    @PostMapping("/register")
-    public void registerNewUser(@RequestBody User user) {
-        userService.addNewUser(user);
-    }
-
     @GetMapping("/addtofavourites") 
-    public void addFavouriteToUser(@RequestParam int mls, Principal principal) {
+    public String addFavouriteToUser(@RequestParam int mls, Principal principal) {
         String userEmail = principal.getName();
         userService.addFavourite(userEmail, mls);
+        return userService.addFavourite(userEmail, mls);
+    }
+
+    @GetMapping("/addtofavourites_postman") 
+    public String addFavouriteToUserPostman(@RequestParam int mls) {
+        String userEmail = "ardit.baboci@gmail.com";
+        return userService.addFavourite(userEmail, mls);
     }
 
     @GetMapping("/removefromfavourites") 
-    public void removeFavouriteFromUser(@RequestParam int mls, Principal principal) {
+    public String removeFavouriteFromUser(@RequestParam int mls, Principal principal) {
         String userEmail = principal.getName();
         userService.removeFavourite(userEmail, mls);
+        return userService.removeFavourite(userEmail, mls);
     }
 
-    @GetMapping("/getfavourites") 
-    public Set<Property> getUsersFavourite(Principal principal) {
-        String userEmail = principal.getName();
-        return userService.getUsersFavourite(userEmail);
+    @GetMapping("/removefromfavourites_postman") 
+    public String removeFavouriteFromUser(@RequestParam int mls) {
+        String userEmail = "ardit.baboci@gmail.com";
+        return userService.removeFavourite(userEmail, mls);
     }
 
-    @GetMapping("/getmylistings")
-    public Set<Property> getUsersListings(Principal principal) {
-        String userEmail = principal.getName();
-        return userService.getUsersListings(userEmail);
-    }
 }

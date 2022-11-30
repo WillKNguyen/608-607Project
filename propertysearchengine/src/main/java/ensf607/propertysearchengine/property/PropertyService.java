@@ -1,6 +1,5 @@
 package ensf607.propertysearchengine.property;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import ensf607.propertysearchengine.user.*;
 import ensf607.propertysearchengine.pricehistory.*;
+import ensf607.propertysearchengine.neighbourhood.*;
 
 @Service
 public class PropertyService {
@@ -23,16 +23,14 @@ public class PropertyService {
     private PriceHistoryRepository priceHistoryRepository;
 
     @Autowired
+    private NeighbourhoodRepository neighbourhoodRepository;
+
+    @Autowired
     public PropertyService(PropertyRepository propertyRepository) {
         this.propertyRepository = propertyRepository;
     }
 
-
-    public Optional<List<Property>> getPropertyByBathrooms(int bathrooms) {
-        return propertyRepository.findAllByBathrooms(bathrooms);
-    }
-
-    public void addNewProperty(Property property, String userEmail) {
+    public String addNewProperty(Property property, String userEmail) {
         Optional<User> userByEmail = userRepository.findById(userEmail);
         if (!userByEmail.isPresent()) {
             throw new IllegalStateException("This user does not exist");
@@ -41,10 +39,58 @@ public class PropertyService {
 
         property.setListingUser(user);
         
+        Optional<Property> propertyByAddress = propertyRepository.findByAddress(property.getAddress());
+        if (propertyByAddress.isPresent()) {
+            throw new IllegalStateException("This address has already been listed!");
+        }
+
+        Optional<Neighbourhood> neighbourhood = neighbourhoodRepository.findById(property.getNeighbourhood().getId());
+        if (!neighbourhood.isPresent()) {
+            throw new IllegalStateException("The neighbourhood cannot be found!");
+        }
+
         propertyRepository.save(property);
 
         PriceHistory newEntry = new PriceHistory(property);
         priceHistoryRepository.save(newEntry);
+
+        return "Property has been added!";
+    }
+
+    public String addNewPropertyPostman(String address,
+                                     String propertyType,
+                                     int yearBuilt,
+                                     int neighbourhoodID,
+                                     double bathrooms,
+                                     double bedrooms,
+                                     int price) {
+
+        Optional<User> userByEmail = userRepository.findById("ardit.baboci@gmail.com");
+        if (!userByEmail.isPresent()) {
+            throw new IllegalStateException("This user does not exist");
+        }
+        User user = userByEmail.get();
+
+        Optional<Neighbourhood> neighbourhood = neighbourhoodRepository.findById(neighbourhoodID);
+        if (!neighbourhood.isPresent()) {
+            throw new IllegalStateException("The neighbourhood cannot be found!");
+        }
+
+        Property property = new Property(address, propertyType, yearBuilt, bedrooms, bathrooms, price, neighbourhood.get());
+
+        Optional<Property> propertyByAddress = propertyRepository.findByAddress(property.getAddress());
+        if (propertyByAddress.isPresent()) {
+            throw new IllegalStateException("This address has already been listed!");
+        }
+
+        property.setListingUser(user);
+        
+        propertyRepository.save(property);
+
+        PriceHistory newEntry = new PriceHistory(property);
+        priceHistoryRepository.save(newEntry);
+
+        return "Property has been added!";
     }
 
     public List<Property> viewAllListings() {
@@ -74,6 +120,7 @@ public class PropertyService {
         
     }
 
+
     public String updatePrice(int mls, int newPrice, String userEmail) {
 
         Optional<Property> propertyByID = propertyRepository.findById(mls);
@@ -95,8 +142,6 @@ public class PropertyService {
 
         return "Price has been updated.";
     }
-
-
 
     public Optional<Property> viewListingByMLS(int mls) {
         return propertyRepository.findById(mls);

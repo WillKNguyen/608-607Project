@@ -4,11 +4,9 @@ import ensf607.propertysearchengine.pricehistory.*;
 import ensf607.propertysearchengine.neighbourhood.*;
 import ensf607.propertysearchengine.user.*;
 
-// import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.annotation.CreatedDate;
@@ -78,7 +76,7 @@ public class Property implements Serializable {
     }
 
 
-    public Property(String address, String propertyType, int yearBuilt, double bedrooms, double bathrooms, int price, int neighbourhoodID) {
+    public Property(String address, String propertyType, int yearBuilt, double bedrooms, double bathrooms, int price, Neighbourhood neighbourhood) {
         this.price = price;
         this.dateListed = LocalDate.now();
         this.address = address;
@@ -86,6 +84,7 @@ public class Property implements Serializable {
         this.yearBuilt = yearBuilt;
         this.bedrooms = bedrooms;
         this.bathrooms = bathrooms;
+        this.neighbourhood = neighbourhood;
     }
 
     public int getMls() {

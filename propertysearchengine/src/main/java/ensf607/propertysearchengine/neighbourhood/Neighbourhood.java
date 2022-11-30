@@ -1,7 +1,5 @@
 package ensf607.propertysearchengine.neighbourhood;
 
-// import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
